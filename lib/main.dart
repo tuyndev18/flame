@@ -54,7 +54,6 @@ class Map extends World {
             add(_player);
             break;
           case "Block":
-            print(spawn.x);
             var block = Block()
               ..size = Vector2(spawn.width, spawn.height)
               ..position = Vector2(spawn.x, spawn.y);
@@ -72,11 +71,12 @@ class Map extends World {
   void update(double dt) {
     _player.position.x += _player.velocity.x * _player.moveSpeed * dt;
 
-
     checkHorizontalCollision();
+    if (_player.hasJumb && _player.isOnBlock) {
+      _player.onJump();
+    }
     _player.velocity.y += _player.gravity;
     _player.position.y += _player.velocity.y * dt;
-    
 
     checkVerticalCollision();
     super.update(dt);
@@ -105,6 +105,7 @@ class Map extends World {
         if (_player.velocity.y > 0) {
           _player.velocity.y = 0;
           _player.position.y = block.position.y - _player.height;
+          _player.isOnBlock = true;
           break;
         }
       }
@@ -139,10 +140,14 @@ class Player extends SpriteAnimationGroupComponent
     with HasGameRef<GameCtrl>, KeyboardHandler {
   late final SpriteAnimation jumpCharacter;
   MoveDirection moveDirection = MoveDirection.right;
-  bool isFlipHorizontal = false;
-  double moveSpeed = 100;
+  double moveSpeed = 120;
+  double jumpForce = 320;
   final int gravity = 10;
   Vector2 velocity = Vector2.zero();
+
+  bool isFlipHorizontal = false;
+  bool hasJumb = false;
+  bool isOnBlock = false;
 
   Player({required position}) : super(position: position);
 
@@ -159,6 +164,12 @@ class Player extends SpriteAnimationGroupComponent
     return super.onLoad();
   }
 
+  void onJump() {
+    velocity.y = -jumpForce;
+    isOnBlock = false;
+    hasJumb = false;
+  }
+
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     if (keysPressed.contains(LogicalKeyboardKey.keyA) ||
@@ -167,10 +178,11 @@ class Player extends SpriteAnimationGroupComponent
     } else if (keysPressed.contains(LogicalKeyboardKey.keyD) ||
         keysPressed.contains(LogicalKeyboardKey.arrowRight)) {
       velocity.x = 1;
+    } else if (keysPressed.contains(LogicalKeyboardKey.space)) {
+      hasJumb = true;
     } else {
       velocity.x = 0;
     }
-
     return super.onKeyEvent(event, keysPressed);
   }
 
