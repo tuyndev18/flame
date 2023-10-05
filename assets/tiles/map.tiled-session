@@ -3,8 +3,9 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "lv1.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
         "Terrain (16x16).tsx": {
@@ -15,8 +16,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 250.66666666666663,
-                "y": 185.33333333333331
+                "x": 600,
+                "y": 554.6666666666665
             }
         }
     },
@@ -27,11 +28,13 @@
     "map.tileWidth": 16,
     "map.width": 45,
     "openFiles": [
+        "lv1.tmx",
+        "Terrain (16x16).tsx"
     ],
     "project": "map.tiled-project",
     "recentFiles": [
-        "lv1.tmx",
-        "Terrain (16x16).tsx"
+        "Terrain (16x16).tsx",
+        "lv1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.margin": 0,

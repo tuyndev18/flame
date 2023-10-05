@@ -157,10 +157,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: bd2b45f9fc0ec4939031b85c0b0a97cf09357c12ecd072d44389a4c577a2c0f0
+      sha256: f1ed45b49db36f6650882900f3216516d5c2628400bad8b4e92d83c116d79b12
       url: "https://pub.dev"
     source: hosted
-    version: "1.8.2"
+    version: "1.9.1"
   flame_audio:
     dependency: "direct main"
     description:
@@ -169,6 +169,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.5"
+  flame_spine:
+    dependency: "direct main"
+    description:
+      name: flame_spine
+      sha256: "16a17a45969cd50e062d1274edffc524193ed9c76fb340c32377507086ab42ad"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1+3"
   flame_tiled:
     dependency: "direct main"
     description:
@@ -216,6 +224,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  inject_js:
+    dependency: transitive
+    description:
+      name: inject_js
+      sha256: "3ab213e2c76375a611f57eb0044d32c6e18c5091d52510e7fe9f88f6bee83d19"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   js:
     dependency: transitive
     description:
@@ -352,6 +368,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.7.3"
+  raw_image_provider:
+    dependency: transitive
+    description:
+      name: raw_image_provider
+      sha256: d5b20d69e8a998a4dc846a3d35dca8760121d18b6895233fca52f9055a9a7e8e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -365,6 +389,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  spine_flutter:
+    dependency: transitive
+    description:
+      name: spine_flutter
+      sha256: edfd20c0423ac16b2d9253fa4cfc2edc8f9f520af94e04cfe5ca272d2af2d947
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.17"
   stack_trace:
     dependency: transitive
     description:
@@ -453,6 +485,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.1.4-beta"
+  web_ffi_fork:
+    dependency: transitive
+    description:
+      name: web_ffi_fork
+      sha256: "7466228b7fc6a29ee1b5f6ab7ee2473847367a70fb523eb1a7c1d7a6a9841589"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.4"
   win32:
     dependency: transitive
     description:
@@ -479,4 +519,4 @@ packages:
     version: "6.3.0"
 sdks:
   dart: ">=3.1.0 <4.0.0"
-  flutter: ">=3.10.0"
+  flutter: ">=3.10.5"
